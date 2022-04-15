@@ -20,24 +20,14 @@ function dump(square) {
     return square.toString();
   }
 
-  let dumped;
+  let dumped = [];
 
   for (let subsquare of square) {
-    dumped += dump(subsquare);
+    dumped.push(dump(subsquare));
   }
 
-  return dumped;
+  return dumped.join(" ");
 }
-
-let test1 = dump([0, 1, 0, 1]);  // 0 1 0 1
-console.log("first test", test1);
-
-let test2 = dump([0, 0, 0, [1, 1, 1, 1]]) // 0 0 0 1 1 1 1
-console.log("second test", test2);
-
-let test3 = dump([0, 0, 0, [1, 1, 1, [0, 0, 0, [1, 1, 1, 1]]]]);
-console.log("test3", test3); // 0 0 0 1 1 1 0 0 0 1 1 1 1
-
 
 // validate(0) // true
 // A split square of four simple filled squares is valid:
@@ -81,29 +71,34 @@ function validate(square) {
   return true;
 }
 
-let test1 = validate(0); // true
-console.log("true", test1);
+// let test1 = validate(0); // true
+// console.log("true", test1);
 
-let test2 = validate([1, 1, 1, 1]) // true
-console.log("true", test2);
+// let test2 = validate([1, 1, 1, 1]) // true
+// console.log("true", test2);
 
-let test3 = validate(2) // false
-console.log("false", test3);
+// let test3 = validate(2) // false
+// console.log("false", test3);
 
-let test4 = validate([1, 1, 1, 1, 1]) // false
-console.log("false", test4);
+// let test4 = validate([1, 1, 1, 1, 1]) // false
+// console.log("false", test4);
 
-let test5 = validate([1, 0, [1, [0, 0, 0, 0, 1], 1, [1, 1, 1, 1]], 1]) // false
-console.log("false", test5);
+// let test5 = validate([1, 0, [1, [0, 0, 0, 0, 1], 1, [1, 1, 1, 1]], 1]) // false
+// console.log("false", test5);
 
-let test6 = validate([1, [1, 0, 1, [0, [0, 0, 0], 1, 1]], [1, 0, 1, 0], 1]) // false
-console.log("false", test6);
+// let test6 = validate([1, [1, 0, 1, [0, [0, 0, 0], 1, 1]], [1, 0, 1, 0], 1]) // false
+// console.log("false", test6);
 
-let test7 = validate([1, 0, [1, [0, 0, 0, 0], 1, [1, 1, 1, 1]], 1]); // true
-console.log("true 7", test7);
+// let test7 = validate([1, 0, [1, [0, 0, 0, 0], 1, [1, 1, 1, 1]], 1]); // true
+// console.log("true 7", test7);
 
-let test8 = validate([1,
-         [1, 0, 1, [0, [0, 0, 0, 0], 1, 1]],
-         [1, 0, 1, 0],
-         1]);  // true
-console.log("true test 8", test8);
+// let test8 = validate([1,
+//          [1, 0, 1, [0, [0, 0, 0, 0], 1, 1]],
+//          [1, 0, 1, 0],
+//          1]);  // true
+// console.log("true test 8", test8);
+
+module.exports = {
+  dump,
+  validate
+};
