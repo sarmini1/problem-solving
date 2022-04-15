@@ -21,15 +21,24 @@ describe("dump", function () {
   });
 });
 
-// describe("validate", function () {
-//   it("should find the index of a value in a sorted array", function () {
-//     expect(recursiveBinarySearch([1, 2, 3, 4], 4)).toEqual(3);
-//     expect(recursiveBinarySearch([1, 2], 1)).toEqual(0);
-//     expect(recursiveBinarySearch([1, 2, 3, 4, 5, 6, 7], 6)).toEqual(5);
-//   });
+describe("validate", function () {
+  it("works with simple squares", function () {
+    expect(validate(0)).toEqual(true);
+    expect(validate(2)).toEqual(false);
+  });
 
-//   it("should return -1 if the value is not found", function () {
-//     expect(recursiveBinarySearch([1, 2, 3, 4], 0)).toEqual(-1);
-//     expect(recursiveBinarySearch([1, 2], 11)).toEqual(-1);
-//   });
-// });
+  it("works with split squares", function () {
+    expect(validate([1, 1, 1, 1])).toEqual(true);
+    expect(validate([1, 0, [1, [0, 0, 0, 0], 1, [1, 1, 1, 1]], 1])).toEqual(true);
+    expect(validate(
+      [1,
+        [1, 0, 1, [0, [0, 0, 0, 0], 1, 1]],
+        [1, 0, 1, 0],
+        1])).toEqual(
+          true);
+    expect(validate([1, 1, 1, 1, 1])).toEqual(false);
+    expect(validate([1, 0, [1, [0, 0, 0, 0, 1], 1, [1, 1, 1, 1]], 1])).toEqual(false);
+    expect(validate([1, [1, 0, 1, [0, [0, 0, 0], 1, 1]], [1, 0, 1, 0], 1])).toEqual(false);
+
+  });
+});
