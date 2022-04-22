@@ -1,7 +1,13 @@
 "use strict";
 
-//iteratively
-
+/**
+ * Accepts an array and desired value, returning the index
+ * at which the value exists in the array (and -1 if it
+ * does not exist).
+ *
+ * iterativeBinarySearch([1,2], 2) => 1
+ * iterativeBinarySearch([1,2], 7) => -1
+ */
 function iterativeBinarySearch(arr, val) {
 
   let leftIdx = 0;
@@ -27,8 +33,14 @@ function iterativeBinarySearch(arr, val) {
   return -1;
 }
 
-// recursively
-
+/**
+ * Accepts an array and desired value, returning the index
+ * at which the value exists in the array (and -1 if it
+ * does not exist).
+ *
+ * iterativeBinarySearch([1,2], 2) => 1
+ * iterativeBinarySearch([1,2], 7) => -1
+ */
 function recursiveBinarySearch(arr, val, left = 0, right = arr.length) {
 
   //base case, when do we stop recursing
