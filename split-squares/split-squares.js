@@ -64,8 +64,7 @@ function validate(square) {
  * simplify([1, 0, 1, 0])  // [1, 0, 1, 0]
  * simplify([1, 0, 1, [1, 1, 1, 1]])  // [1, 0, 1, 1]
  *
- * @param {*} square
- */
+ * */
 function simplify(square) {
 
   if (typeof (square) === "number") {
@@ -102,9 +101,21 @@ function simplify(square) {
       return simpleSquares[0];
     }
   }
-
 }
 
+
+/** Adds two squares together, each represented by either an array or an integer.
+ *
+ * Returns either an array or an integer, depending on the type of square, ex:
+ *
+ * add(0, [1, 0, 1, 0]) => [1, 0, 1, 0]
+ *
+ */
+function add(square1, square2){
+
+
+
+}
 
 
 module.exports = {
