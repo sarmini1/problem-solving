@@ -80,7 +80,8 @@ function simplify(square) {
 
     if (Array.isArray(subsquare)){
       let simplified = simplify(subsquare);
-      subsquare = simplified;
+      // subsquare = simplified;
+      simpleSquares.push(simplified)
     }
 
     // if the current subsquare is just an integer
