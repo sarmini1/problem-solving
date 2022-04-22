@@ -78,9 +78,8 @@ function simplify(square) {
   // loop through each subsquare
   for (let subsquare of square) {
 
-    if (Array.isArray(subsquare)){
+    if (Array.isArray(subsquare)) {
       let simplified = simplify(subsquare);
-      // subsquare = simplified;
       simpleSquares.push(simplified)
     }
 
@@ -89,31 +88,20 @@ function simplify(square) {
     // check if it's a mixed square or not
     if (typeof (subsquare) === "number") {
       simpleSquares.push(subsquare);
-
-      if (simpleSquares.length === 4) {
-        let uniqueVals = new Set(simpleSquares);
-        // if we have a mixed square, we can't simplify it
-        // need to push this to the larger simpleSquares array
-        if (uniqueVals.size !== 1) {
-          return simpleSquares;
-        }
-        else {
-          return subsquare;
-        }
-      }
-      continue;
     }
-
-    // if subsquare is an ARRAY
-    // we need to recurse and call simplify
-
-    // if (typeof (simplified) === "number") {
-    //   return simplified;
-    // }
-    // simpleSquares.push(simplified);
   }
-  console.log("simplesquare return val", simpleSquares);
-  return simpleSquares;
+
+  if (simpleSquares.length === 4) {
+    let uniqueVals = new Set(simpleSquares);
+    // if we have a mixed square, we can't simplify it
+    // need to push this to the larger simpleSquares array
+    if (uniqueVals.size !== 1) {
+      return simpleSquares;
+    }
+    else {
+      return simpleSquares[0];
+    }
+  }
 
 }
 
