@@ -191,8 +191,12 @@ class LinkedList {
     return sum;
   }
 
-  /** reverseInPlace() reverse list in place. returns undefined */
-
+  /** reverseInPlace() reverse list in place. returns undefined
+   *
+   * HEAD ---> NODE ---> NODE ----> NODE ----> TAIL
+   *
+   *
+  */
   reverseInPlace() {
 
   }
