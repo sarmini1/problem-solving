@@ -1,9 +1,19 @@
 "use strict";
 
-/**
+/** objectCompare
+ *
  * Accepts two objects (either arrays or POJOs) and
  * returns true/false depending on if those two objects
  * contain all the same values.
+ *
+ *  Example:
+ *  var obj1 = { 1: [1, 2, 3, [4, { a: [1] }]] };
+ *  var obj2 = { 1: [1, 2, 3, [4, { a: [1] }]] };
+ *  objectCompare(obj1, obj2) => true
+ *
+ *  var obj1 = { 1: [1, 3, 2, [4, { a: [1] }]] };
+ *  var obj2 = { 1: [1, 2, 3, [4, { a: [1] }]] };
+ *  objectCompare(obj1, obj2) => false
  */
 function objectCompare(obj1, obj2) {
   // Fail fast if obj1 or obj2 aren't provided, if at least one of them
@@ -19,11 +29,11 @@ function objectCompare(obj1, obj2) {
   }
 
   // If we make it to this point, we should know that both obj1 and obj2
-  //  are the same type of object.
+  // are the same type of object.
 
-  //If our current objects are POJOs
+  // If our current objects are POJOs
   if (!Array.isArray(obj1)) {
-    //Fail fast and make sure both objects have the same keys array length
+    // Fail fast and make sure both objects have the same keys array length
     if (Object.keys(obj1).length !== Object.keys(obj2).length) {
       return false;
     }
@@ -49,7 +59,7 @@ function objectCompare(obj1, obj2) {
     }
   }
   else if (Array.isArray(obj1)) {
-    //Fail fast and make sure both arrays have the same length
+    // Fail fast and make sure both arrays have the same length
     if (obj1.length !== obj2.length) {
       return false;
     }
@@ -71,7 +81,7 @@ function objectCompare(obj1, obj2) {
       }
     }
   }
-  //Base case is essentially the end of whichever loop we're in. If we make
+  // Base case is essentially the end of whichever loop we're in. If we make
   // it through that without returning false at any of the inequality checks,
   // the objects' values are equal.
 

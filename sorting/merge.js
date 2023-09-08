@@ -1,7 +1,10 @@
 "use strict";
 
-/**Takes in two sorted arrays a and b
- * Returns one new array containing both input arrays in sorted order
+/** merge
+ *
+ * Takes in two sorted arrays, a and b
+ * Returns one new array containing both input arrays in sorted order. Does
+ * not mutate input arrays.
  *
  * ([1], [2]) => [1, 2]
  * ([3, 4, 5], [1, 2])) => [1, 2, 3, 4, 5]
@@ -12,12 +15,12 @@ function merge(a, b) {
   let pointerA = 0;
   let pointerB = 0;
 
-  //start at the beginning of both arrays
-  //if the pointerA value is less than or equal to pointerB value,
-  //push pointerA value to combined array and incremement pointerA.
-  //Otherwise, push pointerB value to combined arry and increment pointerB.
+  // Start at the beginning of both arrays.
+  // If the pointerA value is less than or equal to pointerB value,
+  // push pointerA value to combined array and incremement pointerA.
+  // Otherwise, push pointerB value to combined arry and increment pointerB.
 
-  // if one of the arrays becomes exhausted, we add the remaining values from the
+  // If one of the arrays becomes exhausted, we add the remaining values from the
   // other array to our output array.
 
   while (pointerA < a.length && pointerB < b.length) {
@@ -49,7 +52,9 @@ function merge(a, b) {
 }
 
 
-/** Accepts an unsorted array of integers
+/** mergeSort
+ *
+ * Accepts an unsorted array of integers
  *
  * @param {array} unsorted
  *
@@ -73,7 +78,7 @@ function mergeSort(unsorted) {
   let firstHalf = unsorted.slice(0, midpoint);
   let secondHalf = unsorted.slice(midpoint);
 
-  //if both halves are greater than 1 in length, we need to split them again
+  // If both halves are greater than 1 in length, we need to split them again
   firstHalf = mergeSort(firstHalf);
   secondHalf = mergeSort(secondHalf);
 

@@ -33,9 +33,11 @@ describe("#objectCompare", function () {
     expect(objectCompare(obj1, obj2)).toEqual(false);
 
     var obj1 = [
-      { a: 1,
+      {
+        a: 1,
         b: [{ c: 2, g: [3, 4, { d: 6, f: 7 }] }],
-        g: [2, 3, [{ a: 1 }]] },
+        g: [2, 3, [{ a: 1 }]]
+      },
     ];
     var obj2 = [
       {
@@ -47,9 +49,11 @@ describe("#objectCompare", function () {
     expect(objectCompare(obj1, obj2)).toEqual(true);
 
     var obj1 = [
-      { a: 1,
+      {
+        a: 1,
         b: [{ c: 2, g: [3, 4, { d: 6, f: 7 }] }],
-        g: [2, 3, [{ a: 1 }]] },
+        g: [2, 3, [{ a: 1 }]]
+      },
     ];
     var obj2 = [
       {
@@ -153,7 +157,7 @@ describe("#objectCompare", function () {
     var obj2 = { a: 1 };
     expect(objectCompare(obj1, obj2)).toEqual(false);
 
-    var obj1 = { a: 1 }
+    var obj1 = { a: 1 };
     var obj2 = null;
     expect(objectCompare(obj1, obj2)).toEqual(false);
 
