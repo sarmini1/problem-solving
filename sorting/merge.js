@@ -6,6 +6,9 @@
  * Returns one new array containing both input arrays in sorted order. Does
  * not mutate input arrays.
  *
+ *  @param {array} a
+ *  @param {array} b
+ *
  * ([1], [2]) => [1, 2]
  * ([3, 4, 5], [1, 2])) => [1, 2, 3, 4, 5]
  */
@@ -51,14 +54,12 @@ function merge(a, b) {
   return combined;
 }
 
-
 /** mergeSort
  *
- * Accepts an unsorted array of integers
+ * Accepts an unsorted array of integers and returns new array of sorted integers.
+ * Does not mutate input array.
  *
  * @param {array} unsorted
- *
- * Returns new array of sorted integers
  *
  * [4, 20, 12, 10, 7, 9] => [4, 7, 9, 10, 12, 20]
  *
